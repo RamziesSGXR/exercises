@@ -121,3 +121,55 @@ footer p {
 	color: white;
 	padding: 1em 0;
 }
+
+/* NAVIGATION MENU */
+#nav_menu {
+	background-color: #800000;
+	padding: 1em;
+	position: relative;
+  }
+  
+  #nav_menu ul {
+	list-style-type: none;
+	display: flex;
+	justify-content: space-evenly;
+  }
+  
+  #nav_menu ul li {
+	margin-right: 20px;
+  }
+  
+  #nav_menu ul li:last-child {
+	margin-right: 0;
+  }
+  
+  #nav_menu ul li a {
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+	text-decoration: none;
+	transition: color 0.3s;
+  }
+  
+  #nav_menu ul li a:hover {
+	color: yellow;
+  }
+  
+/* SUBMENU */
+#nav_menu ul li ul.dropdown-menu {
+	display: none;
+	position: absolute;
+	background-color: #800000;
+	width: calc(20% * 100%);
+	text-align: center;
+}
+
+#nav_menu ul li:hover ul.dropdown-menu {
+	display: block;
+}
+
+#nav_menu ul li ul.dropdown-menu li a {
+	padding: 1em;
+	white-space: nowrap;
+}
