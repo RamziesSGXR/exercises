@@ -20,7 +20,8 @@ a:focus, a:hover {
 }
 /* the styles for the header */
 header {
-	padding: 1.5em 0 2em 0;
+	display: flex;
+	align-items: center;
 	border-bottom: 3px solid #931420;
 	background-image: linear-gradient(
 	    30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
@@ -34,7 +35,7 @@ header h3 {
 	font-style: italic;
 }
 header img {
-	float: left;
+	flex: 0 0 auto;
 	padding: 0 3.75%;            /* 30 / 800 x 100 */
 }
 .shadow {
@@ -42,20 +43,21 @@ header img {
 }
 /* the styles for the navigation menu */
 #nav_menu ul {
-	list-style-type: none;
+	display: flex;
 	margin: 0;
 	padding: 0;
 	position: relative;
+	list-style-type: none;
 }
 #nav_menu ul li {
-	float: left;
+	flex: 1;
     width: 20%;                 /* 160 / 800 x 100 */
 }
 #nav_menu ul li a {
     display: block;
     text-align: center;
+	text-decoration: none;
     padding: 1em 0;
-    text-decoration: none;
     background-color: #800000;
     color: white;
     font-weight: bold;
@@ -67,6 +69,7 @@ header img {
 	width: 100%;
     display: none;
     position: absolute;
+	flex-direction: column;
     top: 100%;
 }
 #nav_menu ul ul li {
@@ -80,15 +83,16 @@ header img {
     clear: both;
     display: block;
 }
-/* the styles for the main content */
+/* the styles for the main content */ /*UPDATED for flex*/
 main {
-	clear: left;
+	display: flex;
+	flex-direction: row-reverse;
 }
 
-/* the styles for the section */
+/* the styles for the section */ /*UPDATED for flex*/
 section {
 	width: 65.625%;                  /* 525 / 800 X 100 */
-	float: right;
+	flex: 2;
 	padding: 0 2.5% 20px 2.5%;       /* 20 / 800 x 100 */
 }
 section h1 {
@@ -116,7 +120,7 @@ section li {
 	padding-bottom: .35em;
 }
 
-/* the styles for the article */
+/* the styles for the article */ /*UPDATED for flex*/
 article {
 	padding: .5em 0;
 	border-top: 2px solid #800000;
@@ -137,10 +141,9 @@ article img {
 	border: 1px solid black;
 }
 
-/* the styles for the aside */
+/* the styles for the aside */ /*UPDATED for flex*/
 aside {
-	width: 26.875%;                     /* 215 / 800 x 100 */
-	float: right;
+	flex: 1;
 	padding: 0 0 20px 2.5%;             /* 20 / 800 x 100 */
 }
 aside h2 {
@@ -184,16 +187,17 @@ footer p {
 	}
 }
 
+/*UPDATED for flex*/
 @media only screen and (max-width: 648px) {
 	header img { float: none; }
-	header { text-align: center; }
-	section {
-		float: none;
-		width: 95%;
+	header { 
+		flex-direction: column;
+		text-align: center;
 	}
-	aside {
-		float: none;
-		padding-right: 2.5%;
+	main {
+		flex-direction: column;
+	}
+	section, aside {
 		width: 95%;
 	}
 	article img { max-width: 30%; }
